@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', serif;
+  }
+
+  /* Visible keyboard focus everywhere */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid theme('colors.rust.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: theme('colors.gold');
+    color: theme('colors.ink');
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-pine dark:text-pine-light;
+  }
+
+  .container-page {
+    @apply max-w-content mx-auto px-6 sm:px-8 lg:px-10;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink dark:bg-paper text-paper dark:text-ink px-6 py-3 text-sm font-medium transition-all duration-200 hover:bg-pine dark:hover:bg-pine-light hover:text-paper active:scale-[0.97];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/20 dark:border-paper/25 px-6 py-3 text-sm font-medium text-ink dark:text-paper transition-all duration-200 hover:border-rust hover:text-rust active:scale-[0.97];
+  }
+
+  .card {
+    @apply bg-surface dark:bg-surface-dark border border-ink/[0.07] dark:border-paper/10 rounded-2xl transition-all duration-300;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
