@@ -3,6 +3,9 @@
 A production-style marketing website for a fictional product design & engineering
 studio, built with React, Vite, Tailwind CSS, and React Router.
 
+
+live link - https://nordholm-studio.vercel.app/
+
 ## Features
 
 - 6 fully routed pages: Home, About, Services, Projects, Contact, 404
